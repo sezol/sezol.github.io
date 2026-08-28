@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sejal Hukare — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Portfolio of Sejal Hukare, Data Scientist and ML Engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">Sejal Hukare</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Data Scientist &middot; ML Engineer</p>
+        <h1>Hi, I'm Sejal.</h1>
+        <p class="hero-sub">
+          I build machine learning systems and dig through messy data until it tells me
+          something useful — currently doing that as an M.S. Data Science student at
+          CU Boulder.
+        </p>
+        <p class="hero-hint">Click the circle — just a placeholder for now.</p>
+        <div class="hero-links">
+          <a href="resume.pdf" download class="resume-link">Download resume</a>
+          <a href="https://github.com/sezol" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener">ResearchGate</a>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <!-- PLACEHOLDER HERO VISUAL — the bobblehead idea is cancelled.
+             This simple monogram circle is just a stand-in so the layout
+             feels finished. When you've settled on your "mad crazy"
+             animation idea, replace everything inside #hero-visual with it,
+             and reuse the click listener in script.js (search for
+             "HERO VISUAL INTERACTION") as the hook point. -->
+        <div id="hero-visual" tabindex="0" role="img" aria-label="Decorative monogram, click for a small animation">
+          <span>SH</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="about-grid">
+        <p>
+          I'm a Data Scientist and ML Engineer, currently an M.S. student at CU Boulder.
+          I got here by way of a B.Tech in AI & Data Science, a couple of years building
+          and maintaining systems at a healthcare tech company, and a habit of writing up
+          whatever I'm curious about — which turned into four published papers along
+          the way.
+        </p>
+        <p>
+          Outside of code, I've led a 20-person dance crew and coordinated Himalayan
+          treks, which mostly taught me how to stay calm when things go sideways — a
+          skill that transfers to debugging better than you'd expect.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section alt">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="timeline-date">Jan 2025 – Jun 2025</p>
+          <h3>ERPNext Full Stack Developer — <a href="https://medsynaptic.com/" target="_blank" rel="noopener">Medsynaptic Pvt. Ltd.</a></h3>
+          <ul>
+            <li>Maintained and extended the company's Frappe/ERPNext framework, managing the underlying database and workflows.</li>
+            <li>Built and tested REST APIs (via Postman) connecting the front end to a HeidiSQL database, cutting manual data entry by 30%.</li>
+            <li>Created dashboards in Metabase and Grafana to give the team clearer, faster insight into operations.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">Jun 2024 – Dec 2024</p>
+          <h3>Python Developer Intern — Medsynaptic Pvt. Ltd.</h3>
+          <ul>
+            <li>Developed a HIS–PACS integration system to streamline hospital data transfer.</li>
+            <li>Optimized DICOM data processing, improving retrieval speed by 30%.</li>
+            <li>Tuned SQL queries, cutting report generation time by 40%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Twitter sentiment analysis — Russia–Ukraine conflict</h3>
+          <p>Compared five ML models (Random Forest, SVC, Naïve Bayes and more) across 500,000 tweets; reached 87% accuracy with TF-IDF, 12% above bag-of-words.</p>
+        </div>
+        <div class="card">
+          <h3>Crime prediction — Toronto</h3>
+          <p>Random Forest + K-means model forecasting crime hotspots at 85% accuracy; added Prophet forecasting for a 15% lift on assault prediction, visualized with Folium and Tableau.</p>
+        </div>
+        <div class="card">
+          <h3>Audio deepfake detection</h3>
+          <p>3-layer CNN trained on audio spectrograms, reaching 78% accuracy and a 20% improvement in fake-audio detection over baseline.</p>
+        </div>
+        <div class="card">
+          <h3>Universal Turing machine simulator</h3>
+          <p>Built a simulator modeling Turing machine computation and state transitions.
+          <a href="https://www.ijariit.com/manuscript/universal-turing-machine-simulator/" target="_blank" rel="noopener">Read the write-up →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section alt">
+      <h2>Publications</h2>
+      <ul class="pub-list">
+        <li>
+          <a href="https://ieeexplore.ieee.org/document/10183606" target="_blank" rel="noopener">Facial emotion based song recommendation system</a>
+          <span>— 2023 International Conference on Computational Intelligence and Sustainable Engineering Solutions (CISES)</span>
+        </li>
+        <li>
+          <a href="https://pubs.aip.org/aip/acp/article-abstract/2938/1/030002/2930647/Personalized-travel-recommendation-system-Hybrid" target="_blank" rel="noopener">Personalized travel recommendation system: a hybrid model based on ratings and image analysis</a>
+          <span>— 2nd Online International Conference on Artificial Intelligence and Sustainable Computing for Smart Cities (AIS2C2)</span>
+        </li>
+        <li>
+          <a href="https://www.riverpublishers.com/pdf/ebook/chapter/RP_P9788770229852C23.pdf" target="_blank" rel="noopener">Deadlock detection and prevention</a>
+          <span>— River Publishers</span>
+        </li>
+        <li>
+          <a href="https://www.irjet.net/archives/V9/i1/IRJET-V9I1173.pdf" target="_blank" rel="noopener">IRJET publication</a>
+          <span>— International Research Journal of Engineering and Technology</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2>Let's talk</h2>
+      <p>The easiest way to reach me is email, or find me on any of these:</p>
+      <p class="contact-email"><a href="mailto:sehu6990@colorado.edu">sehu6990@colorado.edu</a></p>
+      <div class="hero-links">
+        <a href="https://github.com/sezol" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener">Medium</a>
+        <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener">ResearchGate</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Sejal Hukare, from scratch, while learning how.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
