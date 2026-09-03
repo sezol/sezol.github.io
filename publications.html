@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Sejal Hukare</title>
+  <meta name="description" content="Published papers by Sejal Hukare, with interactive demos of each one." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html#top" class="nav-name">Sejal Hukare</a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <p class="page-eyebrow">Research</p>
+      <h1 class="page-title">Publications</h1>
+      <p class="page-subtitle">
+        Four papers, four different corners of computer science — an algorithm,
+        an operating systems concept, and two applied ML systems. Each one has
+        a small interactive demo below so you can play with the idea instead of
+        just reading about it.
+      </p>
+    </div>
+
+    <!-- PAPER 1: FACIAL EMOTION -->
+    <section class="pub-block">
+      <p class="pub-venue">IEEE CISES · Apr 2023</p>
+      <h2>Facial Emotion Based Song Recommendation System</h2>
+      <p class="pub-desc">
+        A recommendation system that detects a listener's facial emotion and
+        suggests music to match — the idea that a song recommender should react
+        to how you're actually feeling right now, not just your listening
+        history.
+      </p>
+      <a class="pub-link" href="https://ieeexplore.ieee.org/document/10183606" target="_blank" rel="noopener">Read the paper →</a>
+    </section>
+
+    <!-- PAPER 2: TRAVEL RECOMMENDATION -->
+    <section class="pub-block">
+      <p class="pub-venue">AIP Conference Proceedings · Jan 2023</p>
+      <h2>Personalized Travel Recommendation System: A Hybrid Model Based on Ratings and Image Analysis</h2>
+      <p class="pub-desc">
+        A hybrid recommender that combines traditional rating-based
+        collaborative filtering with image analysis of destinations, so
+        recommendations account for what a place actually looks like, not just
+        how other travelers rated it.
+      </p>
+      <a class="pub-link" href="https://pubs.aip.org/aip/acp/article-abstract/2938/1/030002/2930647/Personalized-travel-recommendation-system-Hybrid" target="_blank" rel="noopener">Read the paper →</a>
+    </section>
+
+    <!-- PAPER 3: BANKER'S ALGORITHM -->
+    <section class="pub-block">
+      <p class="pub-venue">River Publishers · 2022</p>
+      <h2>Survey on Banker's Algorithm to Remove Deadlock</h2>
+      <p class="pub-desc">
+        A survey of the Banker's Algorithm, the classic operating-systems method
+        for deciding whether it's safe to grant a resource request. Before
+        approving any request, the system simulates granting it and checks
+        whether every process could still finish given what's left — if yes,
+        it's a safe state; if no process could ever finish, the system is
+        heading toward deadlock.
+      </p>
+      <a class="pub-link" href="https://www.riverpublishers.com/pdf/ebook/chapter/RP_P9788770229852C23.pdf" target="_blank" rel="noopener">Read the paper →</a>
+
+      <div class="demo-box">
+        <p class="demo-label">Try it — check if a resource state is safe</p>
+        <div id="banker-demo"></div>
+      </div>
+    </section>
+
+    <!-- PAPER 4: DIJKSTRA -->
+    <section class="pub-block">
+      <p class="pub-venue">IRJET · Jan 2022</p>
+      <h2>Dijkstra's Shortest Path Visualization</h2>
+      <p class="pub-desc">
+        A visualization of Dijkstra's algorithm — the same idea behind how Google
+        Maps picks a route. Starting from a source node, the algorithm keeps
+        track of the shortest known distance to every other node, and greedily
+        expands outward from whichever unvisited node is currently cheapest to
+        reach. It only works correctly when every edge weight is non-negative.
+      </p>
+      <a class="pub-link" href="https://www.irjet.net/archives/V9/i1/IRJET-V9I1173.pdf" target="_blank" rel="noopener">Read the paper →</a>
+
+      <div class="demo-box">
+        <p class="demo-label">Try it — shortest path, a new source node each run</p>
+        <svg id="dijkstra-graph" viewBox="0 0 560 260" role="img" aria-label="Interactive graph for running Dijkstra's shortest path algorithm"></svg>
+        <div class="demo-controls">
+          <button id="run-dijkstra" type="button">Run Dijkstra</button>
+          <button id="reset-dijkstra" type="button">Reset</button>
+        </div>
+        <p class="demo-note" id="dijkstra-note">Click "Run Dijkstra" — each run starts from a different node.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Sejal Hukare.</p>
+  </footer>
+
+  <script src="publications.js"></script>
+</body>
+</html>

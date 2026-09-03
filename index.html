@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,7 +20,7 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
+        <a href="publications.html">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -36,28 +37,23 @@
           something useful — currently doing that as an M.S. Data Science student at
           CU Boulder.
         </p>
-        <p class="hero-hint">Click the circle — just a placeholder for now.</p>
+        <!--<p class="hero-hint">Click my photo — a small animation is coming soon.</p>-->
         <div class="hero-links">
           <a href="resume.pdf" download class="resume-link">Download resume</a>
-          <a href="https://github.com/sezol" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener">Medium</a>
-          <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener">ResearchGate</a>
+          <div class="social-row">
+            <a href="https://github.com/sezol" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener"><i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
+            <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-figure">
-        <!-- PLACEHOLDER HERO VISUAL — the bobblehead idea is cancelled.
-             This simple monogram circle is just a stand-in so the layout
-             feels finished. When you've settled on your "mad crazy"
-             animation idea, replace everything inside #hero-visual with it,
-             and reuse the click listener in script.js (search for
-             "HERO VISUAL INTERACTION") as the hook point. -->
-        <div id="hero-visual" tabindex="0" role="img" aria-label="Decorative monogram, click for a small animation">
-          <span>SH</span>
+        <div id="hero-visual" tabindex="0" role="img" aria-label="Photo of Sejal, click for a small animation">
+          <img src="profile.jpg" alt="Sejal Hukare" />
         </div>
       </div>
-
     </section>
 
     <!-- ABOUT -->
@@ -86,11 +82,45 @@
         <div class="timeline-item">
           <p class="timeline-date">Jan 2025 – Jun 2025</p>
           <h3>ERPNext Full Stack Developer — <a href="https://medsynaptic.com/" target="_blank" rel="noopener">Medsynaptic Pvt. Ltd.</a></h3>
+          <p class="timeline-context">
+            I looked after the company's Frappe/ERPNext installation, running on
+            the local office network — configuration, custom workflows, and
+            fixes as they came up, mostly on my own.
+          </p>
           <ul>
-            <li>Maintained and extended the company's Frappe/ERPNext framework, managing the underlying database and workflows.</li>
-            <li>Built and tested REST APIs (via Postman) connecting the front end to a HeidiSQL database, cutting manual data entry by 30%.</li>
-            <li>Created dashboards in Metabase and Grafana to give the team clearer, faster insight into operations.</li>
+            <li>Maintained the Frappe/ERPNext stack over LAN: server-side configuration, custom doctypes and workflow logic, and ongoing upkeep with no other engineer on that system.</li>
+            <li>Designed and shipped a RESTful API layer, tested through Postman, connecting the front end to a HeidiSQL database — cutting manual data entry by 30%.</li>
+            <li>Diagnosed and resolved backend issues directly against the live database when workflows broke, keeping downtime minimal for daily operations.</li>
+            <li>Built Metabase and Grafana dashboards on top of that same data, giving the team visibility they didn't have before.</li>
           </ul>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 640 150" role="img" aria-label="Diagram: my workstation connects over the office LAN to the ERPNext and Frappe server, which reads and writes to a HeidiSQL database, tested via Postman, feeding Metabase and Grafana dashboards">
+              <rect x="10" y="50" width="120" height="50" rx="8" fill="none" stroke="#1F3A2E" stroke-width="1.5"/>
+              <text x="70" y="72" text-anchor="middle" font-size="11" fill="#1F3A2E" font-family="Inter, sans-serif">My workstation</text>
+              <text x="70" y="86" text-anchor="middle" font-size="9" fill="#55665C" font-family="Inter, sans-serif">+ Postman</text>
+
+              <line x1="130" y1="75" x2="180" y2="75" stroke="#9EB8A5" stroke-width="2"/>
+              <text x="155" y="68" text-anchor="middle" font-size="8" fill="#55665C" font-family="Inter, sans-serif">LAN</text>
+
+              <rect x="180" y="50" width="140" height="50" rx="8" fill="#1F3A2E"/>
+              <text x="250" y="72" text-anchor="middle" font-size="11" fill="#F7F6F2" font-family="Inter, sans-serif">Frappe / ERPNext</text>
+              <text x="250" y="86" text-anchor="middle" font-size="9" fill="#9EB8A5" font-family="Inter, sans-serif">server + REST API</text>
+
+              <line x1="320" y1="75" x2="370" y2="75" stroke="#9EB8A5" stroke-width="2"/>
+
+              <rect x="370" y="50" width="120" height="50" rx="8" fill="none" stroke="#D48C82" stroke-width="1.5"/>
+              <text x="430" y="72" text-anchor="middle" font-size="11" fill="#A85D50" font-family="Inter, sans-serif">HeidiSQL</text>
+              <text x="430" y="86" text-anchor="middle" font-size="9" fill="#55665C" font-family="Inter, sans-serif">database</text>
+
+              <line x1="250" y1="100" x2="250" y2="120" stroke="#9EB8A5" stroke-width="2"/>
+              <line x1="250" y1="120" x2="600" y2="120" stroke="#9EB8A5" stroke-width="2"/>
+              <line x1="600" y1="120" x2="600" y2="100" stroke="#9EB8A5" stroke-width="2"/>
+
+              <rect x="530" y="50" width="110" height="50" rx="8" fill="none" stroke="#1F3A2E" stroke-width="1.5"/>
+              <text x="585" y="68" text-anchor="middle" font-size="10" fill="#1F3A2E" font-family="Inter, sans-serif">Metabase +</text>
+              <text x="585" y="82" text-anchor="middle" font-size="10" fill="#1F3A2E" font-family="Inter, sans-serif">Grafana</text>
+            </svg>
+          </div>
         </div>
         <div class="timeline-item">
           <p class="timeline-date">Jun 2024 – Dec 2024</p>
@@ -108,47 +138,63 @@
     <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="card-grid">
-        <div class="card">
-          <h3>Twitter sentiment analysis — Russia–Ukraine conflict</h3>
-          <p>Compared five ML models (Random Forest, SVC, Naïve Bayes and more) across 500,000 tweets; reached 87% accuracy with TF-IDF, 12% above bag-of-words.</p>
+        <div class="card card-featured">
+          <h3>Walkability across America — EPA National Walkability Index</h3>
+          <p>
+            Ran five different modeling approaches — clustering, association rule
+            mining, Naïve Bayes, SVM, logistic regression, and a 200-tree Random
+            Forest — across 220,000+ US census block groups to find what actually
+            separates walkable neighborhoods from car-dependent ones. Every
+            method agreed: transit access is the single biggest predictor.
+            Random Forest reached the highest accuracy at 86%+.
+          </p>
+          <a href="https://mywalkabilityapp-pers-proj.streamlit.app/" target="_blank" rel="noopener">Try the live app →</a>
         </div>
-        <div class="card">
-          <h3>Crime prediction — Toronto</h3>
-          <p>Random Forest + K-means model forecasting crime hotspots at 85% accuracy; added Prophet forecasting for a 15% lift on assault prediction, visualized with Folium and Tableau.</p>
+      </div>
+
+      <div class="card-scroll">
+        <div class="card-scroll-inner">
+          <div class="card">
+            <h3>Twitter sentiment analysis — Russia–Ukraine conflict</h3>
+            <p>Compared five ML models (Random Forest, SVC, Naïve Bayes and more) across 500,000 tweets; reached 87% accuracy with TF-IDF, 12% above bag-of-words.</p>
+          </div>
+          <div class="card">
+            <h3>Crime prediction — Toronto</h3>
+            <p>Random Forest + K-means model forecasting crime hotspots at 85% accuracy; added Prophet forecasting for a 15% lift on assault prediction, visualized with Folium and Tableau.</p>
+          </div>
+          <div class="card">
+            <h3>Audio deepfake detection</h3>
+            <p>3-layer CNN trained on audio spectrograms, reaching 78% accuracy and a 20% improvement in fake-audio detection over baseline.</p>
+          </div>
+          <div class="card">
+            <h3>Universal Turing machine simulator</h3>
+            <p>Built a simulator modeling Turing machine computation and state transitions.
+            <a href="https://www.ijariit.com/manuscript/universal-turing-machine-simulator/" target="_blank" rel="noopener">Read the write-up →</a></p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Audio deepfake detection</h3>
-          <p>3-layer CNN trained on audio spectrograms, reaching 78% accuracy and a 20% improvement in fake-audio detection over baseline.</p>
-        </div>
-        <div class="card">
-          <h3>Universal Turing machine simulator</h3>
-          <p>Built a simulator modeling Turing machine computation and state transitions.
-          <a href="https://www.ijariit.com/manuscript/universal-turing-machine-simulator/" target="_blank" rel="noopener">Read the write-up →</a></p>
-        </div>
+      </div>
+
+      <div class="chart-block">
+        <h3>Model accuracy, one project in progress</h3>
+        <p class="chart-caption">
+          The walkability project ran the same question through five model
+          families — each point below is a real result. Hover or tap a point.
+        </p>
+        <svg id="accuracy-chart" viewBox="0 0 640 260" role="img" aria-label="Line chart of model accuracy on the walkability project, rising from 72% with Naive Bayes to 87% with Random Forest">
+        </svg>
+        <p class="chart-note" id="chart-note">Hover a point to see the model and its accuracy.</p>
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section alt">
+    <!-- PUBLICATIONS TEASER -->
+    <section id="publications" class="section alt pub-teaser">
       <h2>Publications</h2>
-      <ul class="pub-list">
-        <li>
-          <a href="https://ieeexplore.ieee.org/document/10183606" target="_blank" rel="noopener">Facial emotion based song recommendation system</a>
-          <span>— 2023 International Conference on Computational Intelligence and Sustainable Engineering Solutions (CISES)</span>
-        </li>
-        <li>
-          <a href="https://pubs.aip.org/aip/acp/article-abstract/2938/1/030002/2930647/Personalized-travel-recommendation-system-Hybrid" target="_blank" rel="noopener">Personalized travel recommendation system: a hybrid model based on ratings and image analysis</a>
-          <span>— 2nd Online International Conference on Artificial Intelligence and Sustainable Computing for Smart Cities (AIS2C2)</span>
-        </li>
-        <li>
-          <a href="https://www.riverpublishers.com/pdf/ebook/chapter/RP_P9788770229852C23.pdf" target="_blank" rel="noopener">Deadlock detection and prevention</a>
-          <span>— River Publishers</span>
-        </li>
-        <li>
-          <a href="https://www.irjet.net/archives/V9/i1/IRJET-V9I1173.pdf" target="_blank" rel="noopener">IRJET publication</a>
-          <span>— International Research Journal of Engineering and Technology</span>
-        </li>
-      </ul>
+      <p>
+        Four published papers spanning algorithms, ML systems, and recommendation
+        engines — each one gets a proper write-up and a small interactive demo
+        of its own.
+      </p>
+      <a href="publications.html" class="resume-link">Explore publications & demos →</a>
     </section>
 
     <!-- CONTACT -->
@@ -156,17 +202,17 @@
       <h2>Let's talk</h2>
       <p>The easiest way to reach me is email, or find me on any of these:</p>
       <p class="contact-email"><a href="mailto:sehu6990@colorado.edu">sehu6990@colorado.edu</a></p>
-      <div class="hero-links">
-        <a href="https://github.com/sezol" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener">Medium</a>
-        <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener">ResearchGate</a>
+      <div class="social-row contact-social">
+        <a href="https://github.com/sezol" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener"><i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
+        <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Built by Sejal Hukare, from scratch, while learning how.</p>
+    <p>Built by Sejal Hukare.</p>
   </footer>
 
   <script src="script.js"></script>

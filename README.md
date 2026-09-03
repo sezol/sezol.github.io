@@ -4,10 +4,19 @@ Plain HTML + CSS + JavaScript. No build step, no framework — open `index.html`
 in a browser and it just works.
 
 ## File map
-- `index.html` — all the content and page structure
-- `style.css` — colors, fonts, layout (Palette C: pine / eucalyptus / dusty rose)
-- `script.js` — the click-to-smile bobblehead interaction, plus a small nav highlight
-- `art-brief.md` — hand this to your friend when they start the real bobblehead drawing
+- `index.html` — homepage: hero, about, experience, projects, publications teaser, contact
+- `publications.html` — dedicated page with full write-ups and an interactive demo for each paper
+- `style.css` — colors, fonts, layout — shared by both pages
+- `script.js` — homepage behavior: hero click effect, nav highlight, the accuracy chart
+- `publications.js` — the four interactive demos on the publications page
+- `resume.pdf` — linked from the "Download resume" button
+
+## Adding a new page later
+Any new page should keep the same `<link rel="stylesheet" href="style.css">`
+and copy the `<header class="nav">` block from `index.html` so the look stays
+consistent. Just adjust the nav links: from a page other than the homepage,
+links to homepage sections need `index.html#section-id` instead of
+`#section-id`, exactly like `publications.html` does.
 
 ## Preview it locally
 Just double-click `index.html`, or in a terminal:
@@ -39,13 +48,15 @@ then open `http://localhost:8000` in your browser.
    `git push` again. GitHub Pages redeploys automatically.
 
 ## The hero visual
-The bobblehead idea is on hold — right now the hero just shows a simple
-placeholder: a monogram circle that floats gently and pulses on click.
-It's intentionally basic. When you land on your bigger animation idea,
-open `index.html` and replace everything inside `<div id="hero-visual">`,
-then rebuild the `playHeroAnimation()` function in `script.js` (it's
-clearly marked with a `HERO VISUAL INTERACTION` comment) — the click
-listener around it doesn't need to change.
+The hero now shows your actual photo (`profile.jpg`, pulled from your resume
+headshot) inside a circle that floats gently and pulses on click. To swap in
+a different photo later, just replace `profile.jpg` with a new image using
+the same filename — a square image works best since it's center-cropped into
+a circle automatically. When you land on a bigger animation idea, open
+`index.html` and rework what's inside `<div id="hero-visual">`, then rebuild
+the `playHeroAnimation()` function in `script.js` (marked with a
+`HERO VISUAL INTERACTION` comment) — the click listener around it doesn't
+need to change.
 
 ## Updating your resume
 The "Download resume" button always points to a file named `resume.pdf` in the
