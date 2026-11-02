@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Sejal Hukare, Data Scientist and ML Engineer." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,186 +27,311 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="top" class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Data Scientist &middot; ML Engineer</p>
-        <h1>Hi, I'm Sejal.</h1>
-        <p class="hero-sub">
-          I build machine learning systems and dig through messy data until it tells me
-          something useful — currently doing that as an M.S. Data Science student at
-          CU Boulder.
-        </p>
-        <!--<p class="hero-hint">Click my photo — a small animation is coming soon.</p>-->
-        <div class="hero-links">
-          <a href="resume.pdf" download class="resume-link">Download resume</a>
-          <div class="social-row">
-            <a href="https://github.com/sezol" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-            <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener"><i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
-            <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+    <!-- HERO: pinned while you scroll. script.js lights up the skills and lifts the photo. -->
+    <section id="top" class="hero hero-track">
+      <div class="hero-stage">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="hero-portrait" src="images/sejal.png" alt="Sejal smiling in a white and blue floral top with long hair" />
+
+        <div class="hero-content">
+          <p class="eyebrow">&gt; data scientist · ML engineer</p>
+          <h1>Sejal<br><span class="accent">Hukare.</span></h1>
+          <p class="hero-sub">
+            I turn messy data into models, dashboards and small tools people can use.
+            M.S. Data Science student at CU Boulder.
+          </p>
+
+          <div class="skills">
+            <div class="skill" data-lit="80-280"><span>01</span>Machine learning models</div>
+            <div class="skill" data-lit="280-480"><span>02</span>Dashboards and analytics</div>
+            <div class="skill" data-lit="480-680"><span>03</span>Databases and data pipelines</div>
+            <div class="skill" data-lit="640-800"><span>04</span>Research and writing</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="resume.pdf" download class="btn btn-accent">Download resume</a>
+            <a href="#projects" class="btn btn-line">See my work</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-figure">
-        <div id="hero-visual" tabindex="0" role="img" aria-label="Photo of Sejal, click for a small animation">
-          <img src="profile.jpg" alt="Sejal Hukare" />
+    <!-- FLOWER INTERLUDE 1 -->
+    <div class="interlude left-big">
+      <div class="interlude-flower" aria-hidden="true">
+        <img data-scroll="drift" src="images/lily-bunch.jpg" alt="" />
+      </div>
+      <div class="interlude-big rise" data-scroll="rise">Every dataset starts as a <span class="accent">question.</span></div>
+      <p class="interlude-small rise" data-scroll="rise">I like starting with the plain question and finding out what the data says. Sometimes the answer is a model, sometimes a chart, and sometimes just a better question.</p>
+    </div>
+
+    <div class="band" aria-hidden="true">
+      <div class="wrap"><span>Models</span><span>✿</span><span>Dashboards</span><span>✿</span><span>Research</span><span>✿</span><span>Pipelines</span></div>
+    </div>
+
+    <!-- HOW I WORK -->
+    <section class="work wrap" aria-label="How I work">
+      <div class="work-grid">
+        <div class="work-text">
+          <p class="label">// how I work</p>
+          <h2>Curious first, <span class="accent">code</span> second.</h2>
+          <p>Most of my projects begin with a plain question and end with something you can click. The walkability study is one of them.</p>
+        </div>
+        <div class="editor">
+          <div class="editor-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot on"></span>
+            <span class="file">walkability.py</span>
+          </div>
+<pre><span class="c"># EPA National Walkability Index</span>
+<span class="k">import</span> pandas <span class="k">as</span> pd
+<span class="k">from</span> sklearn.ensemble <span class="k">import</span> RandomForestClassifier
+
+df = pd.read_csv(<span class="k">"epa_walkability.csv"</span>)
+features = [<span class="k">"D3B"</span>, <span class="k">"D4A"</span>, <span class="k">"D2B_E8MIXA"</span>, <span class="k">"D2A_EPHHM"</span>]
+
+X, y = df[features], df[<span class="k">"tier"</span>]
+model = RandomForestClassifier(n_estimators=200)
+model.fit(X_train, y_train)</pre>
+          <div class="editor-out"><span class="accent">$</span> python walkability.py → Random Forest, 87% accuracy</div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>About</h2>
+    <section id="about" class="section wrap">
       <div class="about-grid">
-        <p>
-          I'm a Data Scientist and ML Engineer, currently an M.S. student at CU Boulder.
-          I got here by way of a B.Tech in AI & Data Science, a couple of years building
-          and maintaining systems at a healthcare tech company, and a habit of writing up
-          whatever I'm curious about — which turned into four published papers along
-          the way.
-        </p>
-        <p>
-          Outside of code, I've led a 20-person dance crew and coordinated Himalayan
-          treks, which mostly taught me how to stay calm when things go sideways — a
-          skill that transfers to debugging better than you'd expect.
-        </p>
+        <div>
+          <p class="label">01 / about</p>
+          <h2>Hello,<br><span class="accent">I'm Sejal.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            I'm a Data Scientist and ML Engineer, currently an M.S. student at CU Boulder.
+            I got here by way of a B.Tech in AI &amp; Data Science, a couple of years building
+            and maintaining systems at a healthcare tech company, and a habit of writing up
+            whatever I'm curious about — which turned into four published papers along
+            the way.
+          </p>
+          <p>
+            Outside of code, I've led a 20-person dance crew and coordinated Himalayan
+            treks, which mostly taught me how to stay calm when things go sideways — a
+            skill that transfers to debugging better than you'd expect.
+          </p>
+          <p>
+            This term I'm learning how neural networks work from the inside, and how
+            trained models get served to real users.
+          </p>
+        </div>
       </div>
     </section>
 
+    <!-- FLOWER INTERLUDE 2 -->
+    <div class="interlude right-big">
+      <div class="interlude-flower" aria-hidden="true">
+        <img data-scroll="drift" src="images/lily-tall.jpg" alt="" />
+      </div>
+      <div class="interlude-big rise" data-scroll="rise">Messy in. <span class="accent">Clear</span> out.</div>
+      <p class="interlude-small rise" data-scroll="rise">Most of my work is the part in the middle: cleaning, checking and connecting data so the result is something a person can trust and use.</p>
+    </div>
+
     <!-- EXPERIENCE -->
-    <section id="experience" class="section alt">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <p class="timeline-date">Jan 2025 – Jun 2025</p>
-          <h3>ERPNext Full Stack Developer — <a href="https://medsynaptic.com/" target="_blank" rel="noopener">Medsynaptic Pvt. Ltd.</a></h3>
-          <p class="timeline-context">
-            I looked after the company's Frappe/ERPNext installation, running on
-            the local office network — configuration, custom workflows, and
-            fixes as they came up, mostly on my own.
-          </p>
-          <ul>
-            <li>Maintained the Frappe/ERPNext stack over LAN: server-side configuration, custom doctypes and workflow logic, and ongoing upkeep with no other engineer on that system.</li>
-            <li>Designed and shipped a RESTful API layer, tested through Postman, connecting the front end to a HeidiSQL database — cutting manual data entry by 30%.</li>
-            <li>Diagnosed and resolved backend issues directly against the live database when workflows broke, keeping downtime minimal for daily operations.</li>
-            <li>Built Metabase and Grafana dashboards on top of that same data, giving the team visibility they didn't have before.</li>
-          </ul>
-          <div class="arch-diagram">
-            <svg viewBox="0 0 640 150" role="img" aria-label="Diagram: my workstation connects over the office LAN to the ERPNext and Frappe server, which reads and writes to a HeidiSQL database, tested via Postman, feeding Metabase and Grafana dashboards">
-              <rect x="10" y="50" width="120" height="50" rx="8" fill="none" stroke="#1F3A2E" stroke-width="1.5"/>
-              <text x="70" y="72" text-anchor="middle" font-size="11" fill="#1F3A2E" font-family="Inter, sans-serif">My workstation</text>
-              <text x="70" y="86" text-anchor="middle" font-size="9" fill="#55665C" font-family="Inter, sans-serif">+ Postman</text>
+    <section id="experience" class="section wrap">
+      <p class="label">02 / experience</p>
+      <h2 class="section-title">Where I've <span class="accent">worked.</span></h2>
 
-              <line x1="130" y1="75" x2="180" y2="75" stroke="#9EB8A5" stroke-width="2"/>
-              <text x="155" y="68" text-anchor="middle" font-size="8" fill="#55665C" font-family="Inter, sans-serif">LAN</text>
+      <div class="panel">
+        <p class="timeline-date">Jan 2025 – Jun 2025</p>
+        <h3>ERPNext Full Stack Developer — <a href="https://medsynaptic.com/" target="_blank" rel="noopener">Medsynaptic Pvt. Ltd.</a></h3>
+        <p class="timeline-context">
+          I looked after the company's Frappe/ERPNext installation, running on
+          the local office network — configuration, custom workflows, and
+          fixes as they came up, mostly on my own.
+        </p>
+        <ul>
+          <li>Maintained the Frappe/ERPNext stack over LAN: server-side configuration, custom doctypes and workflow logic, and ongoing upkeep with no other engineer on that system.</li>
+          <li>Designed and shipped a RESTful API layer, tested through Postman, connecting the front end to a HeidiSQL database — cutting manual data entry by 30%.</li>
+          <li>Diagnosed and resolved backend issues directly against the live database when workflows broke, keeping downtime minimal for daily operations.</li>
+          <li>Built Metabase and Grafana dashboards on top of that same data, giving the team visibility they didn't have before.</li>
+        </ul>
+        <div class="arch-diagram">
+          <svg viewBox="0 0 640 150" role="img" aria-label="Diagram: my workstation connects over the office LAN to the ERPNext and Frappe server, which reads and writes to a HeidiSQL database, tested via Postman, feeding Metabase and Grafana dashboards">
+            <rect x="10" y="50" width="120" height="50" rx="8" fill="none" stroke="#a3ada6" stroke-width="1.5"/>
+            <text x="70" y="72" text-anchor="middle" font-size="11" fill="#f4f4f0" font-family="Inter, sans-serif">My workstation</text>
+            <text x="70" y="86" text-anchor="middle" font-size="9" fill="#a3ada6" font-family="Inter, sans-serif">+ Postman</text>
 
-              <rect x="180" y="50" width="140" height="50" rx="8" fill="#1F3A2E"/>
-              <text x="250" y="72" text-anchor="middle" font-size="11" fill="#F7F6F2" font-family="Inter, sans-serif">Frappe / ERPNext</text>
-              <text x="250" y="86" text-anchor="middle" font-size="9" fill="#9EB8A5" font-family="Inter, sans-serif">server + REST API</text>
+            <line x1="130" y1="75" x2="180" y2="75" stroke="#3a403c" stroke-width="2"/>
+            <text x="155" y="68" text-anchor="middle" font-size="8" fill="#a3ada6" font-family="Inter, sans-serif">LAN</text>
 
-              <line x1="320" y1="75" x2="370" y2="75" stroke="#9EB8A5" stroke-width="2"/>
+            <rect x="180" y="50" width="140" height="50" rx="8" fill="#34d97b"/>
+            <text x="250" y="72" text-anchor="middle" font-size="11" fill="#0a0a0a" font-family="Inter, sans-serif" font-weight="500">Frappe / ERPNext</text>
+            <text x="250" y="86" text-anchor="middle" font-size="9" fill="#0a0a0a" font-family="Inter, sans-serif">server + REST API</text>
 
-              <rect x="370" y="50" width="120" height="50" rx="8" fill="none" stroke="#D48C82" stroke-width="1.5"/>
-              <text x="430" y="72" text-anchor="middle" font-size="11" fill="#A85D50" font-family="Inter, sans-serif">HeidiSQL</text>
-              <text x="430" y="86" text-anchor="middle" font-size="9" fill="#55665C" font-family="Inter, sans-serif">database</text>
+            <line x1="320" y1="75" x2="370" y2="75" stroke="#3a403c" stroke-width="2"/>
 
-              <line x1="250" y1="100" x2="250" y2="120" stroke="#9EB8A5" stroke-width="2"/>
-              <line x1="250" y1="120" x2="600" y2="120" stroke="#9EB8A5" stroke-width="2"/>
-              <line x1="600" y1="120" x2="600" y2="100" stroke="#9EB8A5" stroke-width="2"/>
+            <rect x="370" y="50" width="120" height="50" rx="8" fill="none" stroke="#34d97b" stroke-width="1.5"/>
+            <text x="430" y="72" text-anchor="middle" font-size="11" fill="#34d97b" font-family="Inter, sans-serif">HeidiSQL</text>
+            <text x="430" y="86" text-anchor="middle" font-size="9" fill="#a3ada6" font-family="Inter, sans-serif">database</text>
 
-              <rect x="530" y="50" width="110" height="50" rx="8" fill="none" stroke="#1F3A2E" stroke-width="1.5"/>
-              <text x="585" y="68" text-anchor="middle" font-size="10" fill="#1F3A2E" font-family="Inter, sans-serif">Metabase +</text>
-              <text x="585" y="82" text-anchor="middle" font-size="10" fill="#1F3A2E" font-family="Inter, sans-serif">Grafana</text>
-            </svg>
-          </div>
+            <line x1="250" y1="100" x2="250" y2="120" stroke="#3a403c" stroke-width="2"/>
+            <line x1="250" y1="120" x2="600" y2="120" stroke="#3a403c" stroke-width="2"/>
+            <line x1="600" y1="120" x2="600" y2="100" stroke="#3a403c" stroke-width="2"/>
+
+            <rect x="530" y="50" width="110" height="50" rx="8" fill="none" stroke="#a3ada6" stroke-width="1.5"/>
+            <text x="585" y="68" text-anchor="middle" font-size="10" fill="#f4f4f0" font-family="Inter, sans-serif">Metabase +</text>
+            <text x="585" y="82" text-anchor="middle" font-size="10" fill="#f4f4f0" font-family="Inter, sans-serif">Grafana</text>
+          </svg>
         </div>
-        <div class="timeline-item">
-          <p class="timeline-date">Jun 2024 – Dec 2024</p>
-          <h3>Python Developer Intern — Medsynaptic Pvt. Ltd.</h3>
-          <ul>
-            <li>Developed a HIS–PACS integration system to streamline hospital data transfer.</li>
-            <li>Optimized DICOM data processing, improving retrieval speed by 30%.</li>
-            <li>Tuned SQL queries, cutting report generation time by 40%.</li>
-          </ul>
-        </div>
+      </div>
+
+      <div class="panel">
+        <p class="timeline-date">Jun 2024 – Dec 2024</p>
+        <h3>Python Developer Intern — Medsynaptic Pvt. Ltd.</h3>
+        <ul>
+          <li>Developed a HIS–PACS integration system to streamline hospital data transfer.</li>
+          <li>Optimized DICOM data processing, improving retrieval speed by 30%.</li>
+          <li>Tuned SQL queries, cutting report generation time by 40%.</li>
+        </ul>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="card-grid">
-        <div class="card card-featured">
-          <h3>Walkability across America — EPA National Walkability Index</h3>
-          <p>
-            Ran five different modeling approaches — clustering, association rule
-            mining, Naïve Bayes, SVM, logistic regression, and a 200-tree Random
-            Forest — across 220,000+ US census block groups to find what actually
-            separates walkable neighborhoods from car-dependent ones. Every
-            method agreed: transit access is the single biggest predictor.
-            Random Forest reached the highest accuracy at 86%+.
-          </p>
-          <a href="https://mywalkabilityapp-pers-proj.streamlit.app/" target="_blank" rel="noopener">Try the live app →</a>
-        </div>
+    <section id="projects" class="section wrap">
+      <p class="label">03 / projects</p>
+      <h2 class="section-title">Things I've <span class="accent">built.</span></h2>
+
+      <div class="featured">
+        <svg class="petals" viewBox="0 0 200 200" aria-hidden="true"><g transform="translate(100,100)" fill="none" stroke="#34d97b" stroke-width="1.2"><ellipse cx="0" cy="-58" rx="22" ry="42"/><ellipse cx="0" cy="-58" rx="22" ry="42" transform="rotate(72)"/><ellipse cx="0" cy="-58" rx="22" ry="42" transform="rotate(144)"/><ellipse cx="0" cy="-58" rx="22" ry="42" transform="rotate(216)"/><ellipse cx="0" cy="-58" rx="22" ry="42" transform="rotate(288)"/></g></svg>
+        <p class="label">Featured · live app</p>
+        <h3>What makes a neighborhood <span class="accent">walkable?</span></h3>
+        <p>
+          Ran several modeling approaches — clustering, association rule mining,
+          Naïve Bayes, SVM, logistic regression, and a 200-tree Random Forest —
+          across 220,000+ US census block groups to find what actually separates
+          walkable neighborhoods from car-dependent ones. Every method agreed:
+          transit access is the single biggest predictor.
+        </p>
+        <a class="btn btn-accent" href="https://mywalkabilityapp-pers-proj.streamlit.app/" target="_blank" rel="noopener">Try the live app →</a>
       </div>
 
-      <div class="card-scroll">
-        <div class="card-scroll-inner">
-          <div class="card">
-            <h3>Twitter sentiment analysis — Russia–Ukraine conflict</h3>
-            <p>Compared five ML models (Random Forest, SVC, Naïve Bayes and more) across 500,000 tweets; reached 87% accuracy with TF-IDF, 12% above bag-of-words.</p>
-          </div>
-          <div class="card">
-            <h3>Crime prediction — Toronto</h3>
-            <p>Random Forest + K-means model forecasting crime hotspots at 85% accuracy; added Prophet forecasting for a 15% lift on assault prediction, visualized with Folium and Tableau.</p>
-          </div>
-          <div class="card">
-            <h3>Audio deepfake detection</h3>
-            <p>3-layer CNN trained on audio spectrograms, reaching 78% accuracy and a 20% improvement in fake-audio detection over baseline.</p>
-          </div>
-          <div class="card">
-            <h3>Universal Turing machine simulator</h3>
-            <p>Built a simulator modeling Turing machine computation and state transitions.
-            <a href="https://www.ijariit.com/manuscript/universal-turing-machine-simulator/" target="_blank" rel="noopener">Read the write-up →</a></p>
-          </div>
+      <div class="card-grid">
+        <div class="card">
+          <p class="tag">Deep learning</p>
+          <h3>Neural networks from scratch</h3>
+          <p>A feed-forward network written with only NumPy: forward pass, backpropagation worked out by hand, for two classes and for four.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Cloud systems</p>
+          <h3>REST vs gRPC benchmark</h3>
+          <p>Comparing response times of the two on one machine, within a zone and across regions.</p>
+        </div>
+        <div class="card planned">
+          <p class="tag">In planning · team project</p>
+          <h3>ModelGate</h3>
+          <p>A platform that serves trained models as live endpoints, splits traffic between versions and watches for data drift.</p>
+        </div>
+        <div class="card">
+          <p class="tag">NLP</p>
+          <h3>Twitter sentiment analysis — Russia–Ukraine conflict</h3>
+          <p>Compared five ML models (Random Forest, SVC, Naïve Bayes and more) across 500,000 tweets; reached 87% accuracy with TF-IDF, 12% above bag-of-words.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Analytics</p>
+          <h3>Crime prediction — Toronto</h3>
+          <p>Random Forest + K-means model forecasting crime hotspots at 85% accuracy; added Prophet forecasting for a 15% lift on assault prediction, visualized with Folium and Tableau.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Audio</p>
+          <h3>Audio deepfake detection</h3>
+          <p>3-layer CNN trained on audio spectrograms, reaching 78% accuracy and a 20% improvement in fake-audio detection over baseline.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Theory</p>
+          <h3>Universal Turing machine simulator</h3>
+          <p>Built a simulator modeling Turing machine computation and state transitions.
+          <a href="https://www.ijariit.com/manuscript/universal-turing-machine-simulator/" target="_blank" rel="noopener">Read the write-up →</a></p>
         </div>
       </div>
 
       <div class="chart-block">
-        <h3>Model accuracy, one project in progress</h3>
+        <h3>Model accuracy on the walkability project</h3>
         <p class="chart-caption">
-          The walkability project ran the same question through five model
-          families — each point below is a real result. Hover or tap a point.
+          The same question went through five model families — each point below is
+          a real result. Hover or tap a point.
         </p>
         <svg id="accuracy-chart" viewBox="0 0 640 260" role="img" aria-label="Line chart of model accuracy on the walkability project, rising from 72% with Naive Bayes to 87% with Random Forest">
         </svg>
         <p class="chart-note" id="chart-note">Hover a point to see the model and its accuracy.</p>
       </div>
+
+      <!-- UNDER CONSTRUCTION -->
+      <div class="construction">
+        <p class="badge">Under construction</p>
+        <h3>Neural network <span class="accent">final project.</span></h3>
+        <p class="intro">My final project for Neural Networks and Deep Learning will live here once it's ready. Here's what to expect, and what isn't ready yet.</p>
+        <div class="construction-cols">
+          <div>
+            <p class="label">Done so far</p>
+            <p>✓ Logistic regression and a small neural network, written from scratch</p>
+            <p>✓ A study guide that runs from perceptrons to transformers</p>
+          </div>
+          <div>
+            <p class="label">Coming next</p>
+            <p>The topic and dataset</p>
+            <p>The model I'm building</p>
+            <p>A short write-up of what I learned</p>
+          </div>
+          <div class="soon">
+            <p class="label">Not ready yet</p>
+            <p>Live demo</p>
+            <p>Final results</p>
+            <p>Code repository</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PUBLICATIONS TEASER -->
-    <section id="publications" class="section alt pub-teaser">
-      <h2>Publications</h2>
-      <p>
-        Four published papers spanning algorithms, ML systems, and recommendation
-        engines — each one gets a proper write-up and a small interactive demo
-        of its own.
-      </p>
-      <a href="publications.html" class="resume-link">Explore publications & demos →</a>
+    <section id="publications" class="section wrap">
+      <p class="label">04 / publications</p>
+      <h2 class="section-title">Papers I've <span class="accent">written.</span></h2>
+      <div class="pub-list">
+        <a class="pub-row" href="publications.html#facial-emotion">
+          <span class="venue">IEEE CISES · Apr 2023</span>
+          <span class="title">Facial Emotion Based Song Recommendation System</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="pub-row" href="publications.html#travel">
+          <span class="venue">AIP Conf. Proc. · Jan 2023</span>
+          <span class="title">Personalized Travel Recommendation System</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="pub-row" href="publications.html#bankers">
+          <span class="venue">River Publishers · 2022</span>
+          <span class="title">Survey on Banker's Algorithm to Remove Deadlock</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="pub-row" href="publications.html#dijkstra">
+          <span class="venue">IRJET · Jan 2022</span>
+          <span class="title">Dijkstra's Shortest Path Visualization</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="pub-note">Two of them have a small interactive demo on the publications page.</p>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <h2>Let's talk</h2>
-      <p>The easiest way to reach me is email, or find me on any of these:</p>
-      <p class="contact-email"><a href="mailto:sehu6990@colorado.edu">sehu6990@colorado.edu</a></p>
-      <div class="social-row contact-social">
-        <a href="https://github.com/sezol" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-        <a href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener"><i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
-        <a href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+    <section id="contact" class="section wrap">
+      <div class="contact-box">
+        <svg class="petals" viewBox="0 0 200 200" aria-hidden="true"><g transform="translate(100,100)" fill="#0a0a0a"><ellipse cx="0" cy="-58" rx="20" ry="42"/><ellipse cx="0" cy="-58" rx="20" ry="42" transform="rotate(90)"/><ellipse cx="0" cy="-58" rx="20" ry="42" transform="rotate(180)"/><ellipse cx="0" cy="-58" rx="20" ry="42" transform="rotate(270)"/></g></svg>
+        <p class="label">05 / contact</p>
+        <h2>Say hello.</h2>
+        <p class="contact-email"><a href="mailto:sehu6990@colorado.edu">sehu6990@colorado.edu</a></p>
+        <div class="social-row">
+          <a class="btn btn-dark" href="https://github.com/sezol" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+          <a class="btn btn-dark" href="https://www.linkedin.com/in/sejal-hukare/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a class="btn btn-dark" href="https://medium.com/@sejal.hukare20" target="_blank" rel="noopener"><i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
+          <a class="btn btn-dark" href="https://www.researchgate.net/profile/Sejal-Hukare" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+        </div>
       </div>
     </section>
   </main>
