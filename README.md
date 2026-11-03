@@ -1,6 +1,7 @@
-# Sejal's portfolio 
+# Sejal's portfolio — black and green
 
-
+Plain HTML + CSS + JavaScript. No build step, no framework — open `index.html`
+in a browser and it just works.
 
 ## File map
 - `index.html` — homepage: hero, about, experience, projects, publications teaser, contact
@@ -117,3 +118,13 @@ the text to add a new one.
   screen sizes so you can catch layout issues without a second device.
 
 
+## How the scrolling works
+`src/script.js` watches how far you've scrolled and writes small numbers (0 to 1)
+onto elements as CSS variables (`--hp`, `--lit`, `--rp`, `--dp`). The CSS in
+the "SCROLL EFFECTS" block of `src/style.css` turns those numbers into movement.
+With reduced-motion turned on, or no JavaScript, everything just shows in its
+finished position.
+
+## Colours (each has one job)
+Base `#0a0a0a`, text `#f4f4f0`, accent green `#34d97b` (where to look or click).
+Change them once in the `:root` block at the top of `src/style.css`.

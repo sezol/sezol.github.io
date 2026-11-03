@@ -170,10 +170,10 @@ h1, h2, h3 {
 .hero-glow {
   position: absolute;
   z-index: 0;
-  right: 0;
-  top: 104px;
-  width: 665px;
-  height: 653px;
+  right: -40px;
+  top: 90px;
+  width: 720px;
+  height: 720px;
   border-radius: 50%;
   background: radial-gradient(circle, color-mix(in srgb, var(--accent) 38%, transparent) 0%, color-mix(in srgb, var(--accent) 12%, transparent) 45%, transparent 70%);
   pointer-events: none;
@@ -182,10 +182,12 @@ h1, h2, h3 {
   position: absolute;
   z-index: 0;
   right: 96px;
-  bottom: 0;
-  width: 448px;
+  top: 240px;
+  width: 480px;
   height: auto;
-  aspect-ratio: 480 / 766;
+  aspect-ratio: 532 / 472;
+  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
   filter: drop-shadow(0 0 24px color-mix(in srgb, var(--accent) 55%, transparent));
   transform-origin: 50% 100%;
   transform: translateY(calc((1 - var(--hp, 1)) * 80px)) scale(calc(0.96 + 0.08 * var(--hp, 1)));
@@ -360,7 +362,7 @@ h1, h2, h3 {
   .section { padding-top: 112px; }
   .hero-track { height: auto; }
   .hero-stage { position: static; min-height: 0; }
-  .hero-portrait { position: relative; display: block; right: auto; margin: 0 auto; width: min(360px, 80%); transform: none; opacity: 1; }
+  .hero-portrait { position: relative; display: block; right: auto; top: auto; margin: 0 auto; width: min(360px, 80%); transform: none; opacity: 1; }
   .hero-glow { display: none; }
   .interlude { height: 720px; }
   .interlude-flower img { width: 720px; }
